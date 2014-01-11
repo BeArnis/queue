@@ -8,4 +8,7 @@ describe("Queue", function () {
   it(" should have properties front", function () {
     expect(myqueue.front).toEqual(0);
   });
+  it(" should have properties back", function () {
+    expect(myqueue.back).toEqual(0);
+  });
 });
