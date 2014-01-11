@@ -14,6 +14,9 @@ function queue_init() {
       if (this.length === 0) {
         return "error";
       }
+      this.length  -= 1;
+      var m = this.storage[this.front];
+      return m;
     },
     is_empty: function () {
       if (this.length > 0) {

@@ -38,7 +38,14 @@ describe("Queue", function () {
     myqueue.enqueue(7);
     expect(myqueue.is_empty()).toEqual(false);
   });
-  it(" should return and error if we try to dequeue an empty queue", function () {
+  it(" should return and error if we try to take out element out of empty queue", function () {
     expect(myqueue.dequeue()).toEqual("error");
+  });
+  it(" lenght should be 0, and the value we take out should be the same one we put in", function () {
+    var k = 9;
+    myqueue.enqueue(k);
+    var m = myqueue.dequeue();
+    expect(m).toEqual(k);
+    expect(myqueue.length).toEqual(0);
   });
 });
