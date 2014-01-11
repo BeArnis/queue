@@ -11,4 +11,7 @@ describe("Queue", function () {
   it(" should have properties back", function () {
     expect(myqueue.back).toEqual(0);
   });
+  it(" should have properties length", function () {
+    expect(myqueue.length).toEqual(0);
+  });
 });
