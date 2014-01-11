@@ -14,4 +14,7 @@ describe("Queue", function () {
   it(" should have properties length", function () {
     expect(myqueue.length).toEqual(0);
   });
+  it(" should have method enqueue", function () {
+    expect(typeof (myqueue.enqueue)).toEqual("function");
+  });
 });
