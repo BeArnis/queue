@@ -34,4 +34,8 @@ describe("Queue", function () {
     expect(myqueue.back).toEqual(0);
     expect(myqueue.front).toEqual(0);
   });
+  it(" is_empty should return false after one we have put in something", function () {
+    myqueue.enqueue(7);
+    expect(myqueue.is_empty()).toEqual(false);
+  });
 });

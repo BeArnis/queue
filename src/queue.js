@@ -3,6 +3,7 @@ function queue_init() {
     front: -1,
     back: -1,
     length: 0,
+    storage: [],
     enqueue: function (item) {
       this.front += 1;
       this.length += 1;
@@ -12,9 +13,11 @@ function queue_init() {
     dequeue: function () {
     },
     is_empty: function () {
+      if (this.length > 0) {
+        return false;
+      }
       return true;
-    },
-    storage: []
+    }
   };
   return queue;
 }
