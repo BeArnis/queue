@@ -56,4 +56,20 @@ describe("Queue", function () {
     expect(myqueue.back).toEqual(2);
     expect(myqueue.front).toEqual(0);
   });
+  it(" length should be 4, fron should be 1 and back should be 3 after we have put in 4 elements an taken out one, and the values we take out should be the same ones we have put in first", function () {
+    var s1 = 9;
+    var s2 = 4;
+    var s3 = 2;
+    var s4 = 5;
+    myqueue.enqueue(s1);
+    myqueue.enqueue(s2);
+    myqueue.enqueue(s3);
+    myqueue.enqueue(s4);
+    var a1 = myqueue.dequeue();
+    var a2 = myqueue.dequeue();
+    expect(myqueue.length).toEqual(2);
+    expect(myqueue.back).toEqual(3);
+    expect(a1).toEqual(s1);
+    expect(a2).toEqual(s2);
+  });
 });
