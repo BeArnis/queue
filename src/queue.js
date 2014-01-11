@@ -6,7 +6,8 @@ function queue_init() {
     enqueue: function () {
     },
     dequeue: function () {
-      
+    },
+    is_empty: function () {
     }
   };
   return queue;

@@ -22,4 +22,7 @@ describe("Queue", function () {
   it(" should have method dequeue", function () {
     expect(typeof (myqueue.dequeue)).toEqual("function");
   });
+  it(" should have method is_empty", function () {
+    expect(typeof (myqueue.is_empty)).toEqual("function");
+  });
 });
