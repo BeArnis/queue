@@ -38,4 +38,7 @@ describe("Queue", function () {
     myqueue.enqueue(7);
     expect(myqueue.is_empty()).toEqual(false);
   });
+  it(" should return and error if we try to dequeue an empty queue", function () {
+    expect(myqueue.dequeue()).toEqual("error");
+  });
 });

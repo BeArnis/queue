@@ -11,6 +11,9 @@ function queue_init() {
       this.storage[this.back] = item;
     },
     dequeue: function () {
+      if (this.length === 0) {
+        return "error";
+      }
     },
     is_empty: function () {
       if (this.length > 0) {
