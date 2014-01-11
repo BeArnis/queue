@@ -72,4 +72,8 @@ describe("Queue", function () {
     expect(a1).toEqual(s1);
     expect(a2).toEqual(s2);
   });
+  it(" should not allout to put in nonexistin values", function () {
+    myqueue.enqueue();
+    expect(myqueue.is_empty()).toEqual(true);
+  });
 });

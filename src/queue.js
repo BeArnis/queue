@@ -5,8 +5,11 @@ function queue_init() {
     length: 0,
     storage: [],
     enqueue: function (item) {
+      if (item === undefined) {
+        return;
+      }
       if (this.front === -1) {
-        this.front += 1;
+        this.front = 0;
       }
       this.length += 1;
       this.back += 1;
@@ -20,10 +23,6 @@ function queue_init() {
       this.length  -= 1;
       var m = this.storage[this.front];
       this.front += 1;
-      if (this.front === this.back) {
-        this.front = -1;
-        this.back = -1;
-      }
       return m;
     },
     is_empty: function () {
