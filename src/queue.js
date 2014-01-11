@@ -8,6 +8,7 @@ function queue_init() {
     dequeue: function () {
     },
     is_empty: function () {
+      return true;
     }
   };
   return queue;

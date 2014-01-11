@@ -25,4 +25,7 @@ describe("Queue", function () {
   it(" should have method is_empty", function () {
     expect(typeof (myqueue.is_empty)).toEqual("function");
   });
+  it(" is_empty should return true if nothing has been done the Queue", function () {
+    expect(myqueue.is_empty()).toEqual(true);
+  });
 });
