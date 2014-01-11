@@ -8,10 +8,10 @@ describe("Queue", function () {
     expect(typeof (queue_init())).toEqual("object");
   });
   it(" should have properties front", function () {
-    expect(myqueue.front).toEqual(0);
+    expect(myqueue.front).toEqual(-1);
   });
   it(" should have properties back", function () {
-    expect(myqueue.back).toEqual(0);
+    expect(myqueue.back).toEqual(-1);
   });
   it(" should have properties length", function () {
     expect(myqueue.length).toEqual(0);
@@ -27,5 +27,11 @@ describe("Queue", function () {
   });
   it(" is_empty should return true if nothing has been done the Queue", function () {
     expect(myqueue.is_empty()).toEqual(true);
+  });
+  it(" length should be 1, back shouldbe 0, fron should be 0 after one element has been put in", function () {
+    myqueue.enqueue(9);
+    expect(myqueue.length).toEqual(1);
+    expect(myqueue.back).toEqual(0);
+    expect(myqueue.front).toEqual(0);
   });
 });
