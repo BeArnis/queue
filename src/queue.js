@@ -5,7 +5,9 @@ function queue_init() {
     length: 0,
     storage: [],
     enqueue: function (item) {
-      this.front += 1;
+      if (this.front === -1) {
+        this.front += 1;
+      }
       this.length += 1;
       this.back += 1;
       this.storage[this.back] = item;

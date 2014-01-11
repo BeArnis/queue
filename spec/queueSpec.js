@@ -48,4 +48,12 @@ describe("Queue", function () {
     expect(m).toEqual(k);
     expect(myqueue.length).toEqual(0);
   });
+  it(" length should be 3, fron should be 0 and back should be 2 after we have put in 3 elements", function () {
+    myqueue.enqueue(9);
+    myqueue.enqueue(4);
+    myqueue.enqueue(2);
+    expect(myqueue.length).toEqual(3);
+    expect(myqueue.back).toEqual(2);
+    expect(myqueue.front).toEqual(0);
+  });
 });
