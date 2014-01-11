@@ -23,11 +23,6 @@ function queue_init() {
       this.length  -= 1;
       var m = this.storage[this.front];
       this.front += 1;
-      if (this.front > this.back) {
-        this.front = -1;
-        this.back = -1;
-        this.storage = [];
-      }
       return m;
     },
     is_empty: function () {

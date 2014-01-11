@@ -76,4 +76,38 @@ describe("Queue", function () {
     myqueue.enqueue();
     expect(myqueue.is_empty()).toEqual(true);
   });
+  it(" checks random value input and output if all works like FIFO principle", function () {
+    var s1 = 9;
+    var s2 = 4;
+    var s3 = 2;
+    var s4 = 3;
+    var s5 = 5;
+    var s6 = -8;
+    var s7 = -1;
+    myqueue.enqueue(s1);
+    myqueue.enqueue(s2);
+    var a1 = myqueue.dequeue();
+    myqueue.enqueue(s3);
+    var a2 = myqueue.dequeue();
+    myqueue.enqueue(s4);
+    var a3 = myqueue.dequeue();
+    var a4 = myqueue.dequeue();
+
+    myqueue.enqueue(s5);
+    var a5 = myqueue.dequeue();
+
+    myqueue.enqueue(s6);
+    myqueue.enqueue(s7);
+    var a6 =  myqueue.dequeue();
+
+    expect(myqueue.length).toEqual(1);
+    expect(myqueue.back).toEqual(6);
+
+    expect(a1).toEqual(s1);
+    expect(a2).toEqual(s2);
+    expect(a3).toEqual(s3);
+    expect(a4).toEqual(s4);
+    expect(a5).toEqual(s5);
+    expect(a6).toEqual(s6);
+  });
 });
