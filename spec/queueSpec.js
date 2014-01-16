@@ -5,10 +5,10 @@ describe("Queue internal implemantation details", function () {
     myqueue = queue_init();
   });
   it(" should have properties front", function () {
-    expect(myqueue.front).toBeNull();
+    expect(myqueue.front).toEqual("null");
   });
   it(" should have properties back", function () {
-    expect(myqueue.back).toBeNull();
+    expect(myqueue.back).toEqual("null");
   });
   it(" should have properties length", function () {
     expect(myqueue.length).toEqual(0);
@@ -113,7 +113,7 @@ describe("Queue", function () {
     expect(a5).toEqual(s5);
     expect(a6).toEqual(s6);
   });
-  it(" function is_empty should return true after the stack has been sanitized", function () {
+  it(" function is_empty should return true after the stack has been deleted", function () {
     var s1 = 9;
     var s2 = 4;
     var s3 = 2;
@@ -124,7 +124,7 @@ describe("Queue", function () {
     myqueue.enqueue(s4);
     var a1 = myqueue.dequeue();
     var a2 = myqueue.dequeue();
-    myqueue.sanitize_queue();
+    myqueue.delete_queue();
     expect(myqueue.is_empty()).toEqual(true);
   });
 });
