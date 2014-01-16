@@ -5,7 +5,13 @@ function queue_init() {
     next: null,
     front: null,
     back: null,
-    length: 0
+    length: 0,
+    is_empty: function () {
+      if (this.length > 0) {
+        return false;
+      }
+      return true;
+    },
   };
   return queue;
 }
