@@ -5,10 +5,10 @@ describe("Queue internal implemantation details", function () {
     myqueue = queue_init();
   });
   it(" should have properties front", function () {
-    expect(myqueue.front).toEqual(-1);
+    expect(myqueue.front).toBeNull();
   });
   it(" should have properties back", function () {
-    expect(myqueue.back).toEqual(-1);
+    expect(myqueue.back).toBeNull();
   });
   it(" should have properties length", function () {
     expect(myqueue.length).toEqual(0);
