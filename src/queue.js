@@ -1,8 +1,5 @@
 function queue_init() {
   queue = {
-    value: null,
-    previous: null,
-    next: null,
     front: null,
     back: null,
     length: 0,
@@ -12,6 +9,16 @@ function queue_init() {
       }
       return true;
     },
+    enqueue: function (item) {
+      var node = {
+            value: item,
+            previous: this.back,
+            next: null,
+      };
+      this.front = node;
+      this.back = node;
+      this.length +=1;
+    }
   };
   return queue;
 }
