@@ -15,10 +15,10 @@ function queue_init() {
             previous: "null",
             next: "null",
       };
-      if(this.front !== "null") {
-          this.front.next = node;
+      if(this.back !== "null") {
+          this.back.next = node;
       }
-      if(this.front === "null") {
+      if(this.front == "null") {
         this.front = node;
       }
       this.front.previous = this.back;
@@ -32,6 +32,9 @@ function queue_init() {
       var m = this.front.value;
       this.front = this.front.next;
       this.front.previous = "null";
+      if(this.front === "null") {
+        this.back = "null";
+      }
       this.length -= 1;
       return m;
     }

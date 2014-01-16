@@ -61,7 +61,7 @@ describe("Queue", function () {
     myqueue.enqueue(2);
     expect(myqueue.length).toEqual(3);
   });
-  it(" length should be 2, fron should be 1 and back should be 3 after we have put in 4 elements an taken out one, and the values we take out should be the same ones we have put in first", function () {
+  it(" length should be 2 after we have put in 4 elements an taken out two, and the values we take out should be the same ones we have put in first", function () {
     var s1 = 9;
     var s2 = 4;
     var s3 = 2;
