@@ -1,11 +1,8 @@
 /*global describe, it, expect, beforeEach, queue_init */
-describe("Queue", function () {
+describe("Queue internal implemantation details", function () {
   var myqueue;
   beforeEach(function () {
     myqueue = queue_init();
-  });
-  it("after initiation should return something", function () {
-    expect(typeof (queue_init())).toEqual("object");
   });
   it(" should have properties front", function () {
     expect(myqueue.front).toEqual(-1);
@@ -15,6 +12,18 @@ describe("Queue", function () {
   });
   it(" should have properties length", function () {
     expect(myqueue.length).toEqual(0);
+  });
+});
+
+
+
+describe("Queue", function () {
+  var myqueue;
+  beforeEach(function () {
+    myqueue = queue_init();
+  });
+  it("after initiation should return something", function () {
+    expect(typeof (queue_init())).toEqual("object");
   });
   it(" should have method enqueue", function () {
     expect(typeof (myqueue.enqueue)).toEqual("function");
@@ -109,5 +118,19 @@ describe("Queue", function () {
     expect(a4).toEqual(s4);
     expect(a5).toEqual(s5);
     expect(a6).toEqual(s6);
+  });
+  it(" function is_empty should return true after the stack has been sanitized", function () {
+    var s1 = 9;
+    var s2 = 4;
+    var s3 = 2;
+    var s4 = 5;
+    myqueue.enqueue(s1);
+    myqueue.enqueue(s2);
+    myqueue.enqueue(s3);
+    myqueue.enqueue(s4);
+    var a1 = myqueue.dequeue();
+    var a2 = myqueue.dequeue();
+    myqueue.sanitize_queue();
+    expect(myqueue.is_empty()).toEqual(true);
   });
 });

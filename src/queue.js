@@ -30,6 +30,13 @@ function queue_init() {
         return false;
       }
       return true;
+    },
+    sanitize_queue: function () {
+      this.front = -1;
+      this.back = -1;
+      this.length = 0;
+      this.storage = [];
+      return this.storage;
     }
   };
   return queue;
