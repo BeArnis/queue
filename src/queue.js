@@ -10,6 +10,9 @@ function queue_init() {
       return true;
     },
     enqueue: function (item) {
+      if (item === undefined) {
+        return;
+      }
       var node = {
             value: item,
             previous: "null",
