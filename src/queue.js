@@ -23,7 +23,11 @@ function queue_init() {
       if (this.length === 0) {
         return "error";
       }
-
+      var m = this.back.value;
+      this.back.previous = this.back;
+      this.back.next = null;
+      this.length -= 1;
+      return m;
     }
   };
   return queue;
