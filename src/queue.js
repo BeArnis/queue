@@ -18,6 +18,12 @@ function queue_init() {
       this.front = node;
       this.back = node;
       this.length +=1;
+    },
+    dequeue: function () {
+      if (this.length === 0) {
+        return "error";
+      }
+
     }
   };
   return queue;
