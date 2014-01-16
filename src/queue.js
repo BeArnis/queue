@@ -1,7 +1,7 @@
 function queue_init() {
   queue = {
-    front: null,
-    back: null,
+    front: "null",
+    back: "null",
     length: 0,
     is_empty: function () {
       if (this.length > 0) {
@@ -12,10 +12,16 @@ function queue_init() {
     enqueue: function (item) {
       var node = {
             value: item,
-            previous: this.back,
-            next: null,
+            previous: "null",
+            next: "null",
       };
-      this.front = node;
+      if(this.front !== "null") {
+          this.front.next = node;
+      }
+      if(this.front === "null") {
+        this.front = node;
+      }
+      this.front.previous = this.back;
       this.back = node;
       this.length +=1;
     },
@@ -23,9 +29,9 @@ function queue_init() {
       if (this.length === 0) {
         return "error";
       }
-      var m = this.back.value;
-      this.back.previous = this.back;
-      this.back.next = null;
+      var m = this.front.value;
+      this.front = this.front.next;
+      this.front.previous = "null";
       this.length -= 1;
       return m;
     }

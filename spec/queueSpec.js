@@ -37,11 +37,9 @@ describe("Queue", function () {
   it(" is_empty should return true if nothing has been done the Queue", function () {
     expect(myqueue.is_empty()).toEqual(true);
   });
-  it(" length should be 1, back shouldbe 0, fron should be 0 after one element has been put in", function () {
+  it(" length should be 1 after one element has been put in", function () {
     myqueue.enqueue(9);
     expect(myqueue.length).toEqual(1);
-    //expect(myqueue.back).toEqual(0);
-    //expect(myqueue.front).toEqual(0);
   });
   it(" is_empty should return false after one we have put in something", function () {
     myqueue.enqueue(7);
@@ -57,15 +55,13 @@ describe("Queue", function () {
     expect(m).toEqual(k);
     expect(myqueue.length).toEqual(0);
   });
-  it(" length should be 3, fron should be 0 and back should be 2 after we have put in 3 elements", function () {
+  it(" length should be 3 after we have put in 3 elements", function () {
     myqueue.enqueue(9);
     myqueue.enqueue(4);
     myqueue.enqueue(2);
     expect(myqueue.length).toEqual(3);
-    expect(myqueue.back).toEqual(2);
-    expect(myqueue.front).toEqual(0);
   });
-  it(" length should be 4, fron should be 1 and back should be 3 after we have put in 4 elements an taken out one, and the values we take out should be the same ones we have put in first", function () {
+  it(" length should be 2, fron should be 1 and back should be 3 after we have put in 4 elements an taken out one, and the values we take out should be the same ones we have put in first", function () {
     var s1 = 9;
     var s2 = 4;
     var s3 = 2;
@@ -77,7 +73,6 @@ describe("Queue", function () {
     var a1 = myqueue.dequeue();
     var a2 = myqueue.dequeue();
     expect(myqueue.length).toEqual(2);
-    expect(myqueue.back).toEqual(3);
     expect(a1).toEqual(s1);
     expect(a2).toEqual(s2);
   });
