@@ -105,7 +105,6 @@ describe("Queue", function () {
     var a6 =  myqueue.dequeue();
 
     expect(myqueue.length).toEqual(1);
-    expect(myqueue.back).toEqual(6);
 
     expect(a1).toEqual(s1);
     expect(a2).toEqual(s2);
